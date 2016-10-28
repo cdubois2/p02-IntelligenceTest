@@ -1,0 +1,81 @@
+/* <!-- Chris Dubois --> */
+h1{
+	font-family: helvetica;
+	text-align: center;
+	text-decoration: underline;
+    padding: 10px;
+    color:#050036;
+}
+p,a,h3{
+    font-family: helvetica;
+    color:#050036;
+    padding: 10px;
+    font-size: 130%;
+    text-align: center;
+
+}
+h2{
+    font-family: helvetica;
+    color:#050036;
+    padding: 10px;
+    font-size: 400%;
+    text-align: center;
+}
+a.fill{
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-decoration:none;
+}
+
+footer {
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+    font-family: helvetica;
+    border: 1px solid white;
+}
+
+#first_group.has-error{
+ color: #a94442;
+}
+
+#first_group.has-success{
+ color: green;
+}
+#first_value{
+    text-align: center;
+}
+#box {
+    height: 575px;
+    margin: 5px;
+    padding: 5px;
+    padding-bottom:15px;
+    border: 5px solid #00110c;
+    background-color: #82bcaa;
+}
+#box2{
+    height: 575px;
+    margin: 5px;
+    padding: 5px;
+    padding-bottom:15px;
+    border: 5px solid #00110c;
+    background-color: #82bcaa;
+    
+    animation-name: q2;
+    animation-duration: 80s;
+}
+
+/* Standard syntax */
+@keyframes q2 {
+    25%  {background-color: #f7d36f;}
+}
+
+ body{
+    background-color: #032117;
+ }
+
+
