@@ -2,8 +2,8 @@ var score = 0;
 
 function calculateScore(){
   var totalScore = Number(getCookie("firstQ")) + Number(getCookie("secondQ")) + Number(getCookie("thirdQ"));
-  var temp = 100 * ((totalScore/3).toFixed(1));
-  document.getElementById("exeter").innerHTML = "Your results are: " + temp.toFixed(1) + "%";
+  var temp = 100 * ((totalScore/3).toFixed(2));
+  document.getElementById("exeter").innerHTML = "Your results are: " + temp + "%";
 }
 
 function validateFirst() 
@@ -56,9 +56,9 @@ function validateSecond()
         location.href = "q3.html";
     }   
   }
-  else if(valueOne.length < 13 || valueOne.length > 13)
+  else if(valueOne.length < 17 || valueOne.length > 17)
   {
-    document.getElementById("first_error").innerHTML="Answer must be 13 characters long. Click me to continue.";
+    document.getElementById("first_error").innerHTML="Answer must be 17 characters long. Click me to continue.";
     document.getElementById("first_error").classList.remove("hidden-message");
     document.getElementById("first_error").classList.add("shown-message");  
     document.getElementById("first_group").classList.add("has-error");
