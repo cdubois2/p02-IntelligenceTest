@@ -1,18 +1,14 @@
+var score = 0;
+
 function calculateScore(){
-  var score = 3;
-  validateFirst();
-  var local = location.href;
-  document.getElementById("exeter").innerHTML= "Your results are: " + score;
-  /*if(local!="results.html")
-  {
-    document.getElementById("exeter").innerHTML= "Your results are: " + score;
-  }*/
+  var totalScore = Number(getCookie("firstQ"));
+
+  document.getElementById("exeter").innerHTML =  totalScore;
 }
 
 function validateFirst() 
 { 
   var valueOne = document.getElementById("first_value").value;
-  var score = 0;
   if(valueOne == "1101A")
   {
     document.getElementById("first_group").classList.add("has-success");
@@ -22,7 +18,7 @@ function validateFirst()
         location.href = "q2.html"; 
     }
     score++;
-    return score;
+    setCookie("firstQ",score,10);
   }
   else if(valueOne.length < 5 || valueOne.length > 5)
   {
@@ -49,7 +45,7 @@ function validateFirst()
 function validateSecond() 
 {
   var valueOne = document.getElementById("first_value").value;
-  if(valueOne == "BCCCDDEDDCCCB")
+  if(valueOne == "CCCCDDDEFEDDDCCCC")
   {
     document.getElementById("first_group").classList.add("has-success");
     document.getElementById("first_group").classList.remove("has-error");
@@ -83,7 +79,7 @@ function validateSecond()
 function validateThird() 
 {
   var valueOne = document.getElementById("first_value").value;
-  if(valueOne == "BCCCDDEDDCCCB")
+  if(valueOne == "16D")
   {
     document.getElementById("first_group").classList.add("has-success");
     document.getElementById("first_group").classList.remove("has-error");
@@ -114,5 +110,26 @@ function validateThird()
   }
 }
 
-
+//courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+//courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
