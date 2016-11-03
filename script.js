@@ -2,7 +2,7 @@ var score = 0;
 
 function calculateScore(){
   var totalScore = Number(getCookie("firstQ")) + Number(getCookie("secondQ")) + Number(getCookie("thirdQ"));
-  var temp = totalScore/3;
+  var temp = totalScore/3 * 10;
   temp.toFixed(2);
   document.getElementById("exeter").innerHTML = "Your results are: " + temp + "%";
 }
@@ -95,7 +95,7 @@ function validateThird()
   }
   else if(valueOne.length < 3 || valueOne.length > 3)
   {
-    document.getElementById("first_error").innerHTML="Answer must be 13 characters long. Click me to continue.";
+    document.getElementById("first_error").innerHTML="Answer must be 3 characters long. Click me to continue.";
     document.getElementById("first_error").classList.remove("hidden-message");
     document.getElementById("first_error").classList.add("shown-message");  
     document.getElementById("first_group").classList.add("has-error");
