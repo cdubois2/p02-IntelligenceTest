@@ -58,22 +58,33 @@ footer {
     background-color: #82bcaa;
 }
 #box2{
+    height: 675px;
+    margin: 5px;
+    padding: 5px;
+    padding-bottom:15px;
+    border: 5px solid #00110c;
+    background-color: #82bcaa;
+    animation-name: q2;
+    animation-duration: 80s;
+}
+#box3{
     height: 575px;
     margin: 5px;
     padding: 5px;
     padding-bottom:15px;
     border: 5px solid #00110c;
     background-color: #82bcaa;
-    
-    animation-name: q2;
+    animation-name: q3;
     animation-duration: 80s;
 }
 
-/* Standard syntax */
 @keyframes q2 {
     25%  {background-color: #f7d36f;}
 }
 
+@keyframes q3 {
+    25%  {background-color: #f7956f;}
+}
  body{
     background-color: #032117;
  }
