@@ -2,7 +2,7 @@ var score = 0;
 
 function calculateScore(){
   var totalScore = Number(getCookie("firstQ")) + Number(getCookie("secondQ")) + Number(getCookie("thirdQ"));
-  var temp = 10 * totalScore/3;
+  var temp = 100 * (totalScore/3);
   temp.toFixed(2);
   document.getElementById("exeter").innerHTML = "Your results are: " + temp + "%";
 }
