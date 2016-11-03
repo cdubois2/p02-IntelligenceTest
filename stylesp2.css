@@ -77,6 +77,16 @@ footer {
     animation-name: q3;
     animation-duration: 80s;
 }
+#box4{
+    height: 340px;
+    margin: 5px;
+    padding: 5px;
+    padding-bottom:15px;
+    border: 5px solid #00110c;
+    background-color: #82bcaa;
+    animation-name: q3;
+    animation-duration: 80s;
+}
 
 @keyframes q2 {
     25%  {background-color: #f7d36f;}
@@ -89,4 +99,6 @@ footer {
     background-color: #032117;
  }
 
-
+span#exeter{
+    font-size: 800%;
+}
