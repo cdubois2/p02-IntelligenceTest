@@ -1,9 +1,10 @@
 var score = 0;
 
 function calculateScore(){
-  var totalScore = Number(getCookie("firstQ"));
-
-  document.getElementById("exeter").innerHTML =  totalScore;
+  var totalScore = Number(getCookie("firstQ")) + Number(getCookie("secondQ")) + Number(getCookie("thirdQ"));
+  var temp = totalScore/3;
+  temp.toFixed(2);
+  document.getElementById("exeter").innerHTML = "Your results are: " + temp + "%";
 }
 
 function validateFirst() 
@@ -14,11 +15,11 @@ function validateFirst()
     document.getElementById("first_group").classList.add("has-success");
     document.getElementById("first_group").classList.remove("has-error");
     document.getElementById("first_error").innerHTML="Correct! Click me to continue!";
+    score++;
+    setCookie("firstQ",score,10);
     document.getElementById("first_error").onclick = function () {
         location.href = "q2.html"; 
     }
-    score++;
-    setCookie("firstQ",score,10);
   }
   else if(valueOne.length < 5 || valueOne.length > 5)
   {
@@ -50,9 +51,11 @@ function validateSecond()
     document.getElementById("first_group").classList.add("has-success");
     document.getElementById("first_group").classList.remove("has-error");
     document.getElementById("first_error").innerHTML="Correct! Click me to continue!";
+    score++;
+    setCookie("secondQ",score,10);
     document.getElementById("first_error").onclick = function () {
         location.href = "q3.html";
-    }
+    }   
   }
   else if(valueOne.length < 13 || valueOne.length > 13)
   {
@@ -84,11 +87,13 @@ function validateThird()
     document.getElementById("first_group").classList.add("has-success");
     document.getElementById("first_group").classList.remove("has-error");
     document.getElementById("first_error").innerHTML="Correct! Click me to continue!";
+    score++;
+    setCookie("thirdQ",score,10);
     document.getElementById("first_error").onclick = function () {
         location.href = "results.html";
     }
   }
-  else if(valueOne.length < 13 || valueOne.length > 13)
+  else if(valueOne.length < 3 || valueOne.length > 3)
   {
     document.getElementById("first_error").innerHTML="Answer must be 13 characters long. Click me to continue.";
     document.getElementById("first_error").classList.remove("hidden-message");
